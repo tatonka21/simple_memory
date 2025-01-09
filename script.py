@@ -4,10 +4,11 @@ import modules.shared as shared
 from modules.chat import clean_chat_message
 from modules.extensions import apply_extensions
 from modules.text_generation import encode, get_max_prompt_length
+import fickling
 
 try:
     with open('saved_data.pkl', 'rb') as f:
-        params = pickle.load(f)
+        params = fickling.load(f)
 except FileNotFoundError:
     params = {
 	    "activate": False,
